@@ -157,7 +157,6 @@ public class Memory
         }
         mLastPosition = position;
         Tile tile = mList.get(position);
-        tile.select();
         int sound = tile.mResId % mSounds.length;
         SoundManager.instance().playSound( sound );
 
@@ -192,6 +191,7 @@ public class Memory
                 mT1 = tile;
                 break;
         }
+        tile.select();
         mSelectedCount++;
         mMoveCount++;
         updateView();
